@@ -1,0 +1,96 @@
+# github.com/davecgh/go-spew v1.1.1
+github.com/davecgh/go-spew/spew
+# github.com/golang/protobuf v1.3.2
+## explicit
+# github.com/google/go-cmp v0.4.0
+## explicit
+github.com/google/go-cmp/cmp
+github.com/google/go-cmp/cmp/cmpopts
+github.com/google/go-cmp/cmp/internal/diff
+github.com/google/go-cmp/cmp/internal/flags
+github.com/google/go-cmp/cmp/internal/function
+github.com/google/go-cmp/cmp/internal/value
+# github.com/google/uuid v1.1.1
+## explicit
+github.com/google/uuid
+# github.com/hashicorp/golang-lru v0.5.3
+## explicit
+github.com/hashicorp/golang-lru/simplelru
+# github.com/json-iterator/go v1.1.10
+## explicit
+github.com/json-iterator/go
+# github.com/kr/text v0.2.0
+## explicit
+# github.com/lightstep/tracecontext.go v0.0.0-20181129014701-1757c391b1ac
+## explicit
+github.com/lightstep/tracecontext.go/traceparent
+github.com/lightstep/tracecontext.go/tracestate
+# github.com/modern-go/concurrent v0.0.0-20180228061459-e0a39a4cb421
+github.com/modern-go/concurrent
+# github.com/modern-go/reflect2 v0.0.0-20180701023420-4b7aa43c6742
+github.com/modern-go/reflect2
+# github.com/niemeyer/pretty v0.0.0-20200227124842-a10e7caefd8e
+## explicit
+# github.com/onsi/ginkgo v1.10.2
+## explicit
+# github.com/onsi/gomega v1.7.0
+## explicit
+# github.com/pkg/errors v0.9.1
+## explicit
+# github.com/pmezard/go-difflib v1.0.0
+github.com/pmezard/go-difflib/difflib
+# github.com/stretchr/testify v1.5.1
+## explicit
+github.com/stretchr/testify/assert
+github.com/stretchr/testify/require
+# github.com/valyala/bytebufferpool v1.0.0
+## explicit
+github.com/valyala/bytebufferpool
+# go.opencensus.io v0.22.0
+## explicit
+go.opencensus.io
+go.opencensus.io/internal
+go.opencensus.io/internal/tagencoding
+go.opencensus.io/metric/metricdata
+go.opencensus.io/metric/metricproducer
+go.opencensus.io/plugin/ochttp
+go.opencensus.io/plugin/ochttp/propagation/b3
+go.opencensus.io/plugin/ochttp/propagation/tracecontext
+go.opencensus.io/resource
+go.opencensus.io/stats
+go.opencensus.io/stats/internal
+go.opencensus.io/stats/view
+go.opencensus.io/tag
+go.opencensus.io/trace
+go.opencensus.io/trace/internal
+go.opencensus.io/trace/propagation
+go.opencensus.io/trace/tracestate
+# go.uber.org/atomic v1.4.0
+## explicit
+go.uber.org/atomic
+# go.uber.org/multierr v1.1.0
+## explicit
+go.uber.org/multierr
+# go.uber.org/zap v1.10.0
+## explicit
+go.uber.org/zap
+go.uber.org/zap/buffer
+go.uber.org/zap/internal/bufferpool
+go.uber.org/zap/internal/color
+go.uber.org/zap/internal/exit
+go.uber.org/zap/zapcore
+# golang.org/x/net v0.0.0-20200202094626-16171245cfb2
+## explicit
+# golang.org/x/sync v0.0.0-20190911185100-cd5d95a43a6e
+## explicit
+golang.org/x/sync/errgroup
+# golang.org/x/sys v0.0.0-20200202164722-d101bd2416d5
+## explicit
+# golang.org/x/xerrors v0.0.0-20191204190536-9bdfabe68543
+golang.org/x/xerrors
+golang.org/x/xerrors/internal
+# gopkg.in/check.v1 v1.0.0-20200227125254-8fa46927fb4f
+## explicit
+# gopkg.in/yaml.v2 v2.3.0
+## explicit
+gopkg.in/yaml.v2
