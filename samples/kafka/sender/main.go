@@ -2,24 +2,25 @@ package main
 
 import (
 	"context"
+	"fmt"
 	"log"
+	"time"
 
 	"github.com/Shopify/sarama"
-	"github.com/google/uuid"
 
 	"github.com/cloudevents/sdk-go/protocol/kafka_sarama/v2"
 	cloudevents "github.com/cloudevents/sdk-go/v2"
 )
 
 const (
-	count = 10
+	count = 100000
 )
 
 func main() {
 	saramaConfig := sarama.NewConfig()
 	saramaConfig.Version = sarama.V2_0_0_0
 
-	sender, err := kafka_sarama.NewSender([]string{"127.0.0.1:9092"}, saramaConfig, "test-topic")
+	sender, err := kafka_sarama.NewSender([]string{"127.0.0.1:9092"}, saramaConfig, "test")
 	if err != nil {
 		log.Fatalf("failed to create protocol: %s", err.Error())
 	}
@@ -33,7 +34,7 @@ func main() {
 
 	for i := 0; i < count; i++ {
 		e := cloudevents.NewEvent()
-		e.SetID(uuid.New().String())
+		e.SetID(fmt.Sprintf("%v", i))
 		e.SetType("com.cloudevents.sample.sent")
 		e.SetSource("https://github.com/cloudevents/sdk-go/v2/samples/kafka/sender")
 		_ = e.SetData(cloudevents.ApplicationJSON, map[string]interface{}{
@@ -50,5 +51,7 @@ func main() {
 		} else {
 			log.Printf("sent: %d, accepted: %t", i, cloudevents.IsACK(result))
 		}
+
+		time.Sleep(time.Second)
 	}
 }

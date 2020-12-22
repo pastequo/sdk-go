@@ -1,7 +1,7 @@
 package sarama
 
 import (
-	"fmt"
+	//"fmt"
 	"sync"
 	"time"
 )
@@ -240,7 +240,7 @@ func (om *offsetManager) flushToBroker() {
 		return
 	}
 
-	fmt.Printf("calling om flushToBroker ok\n")
+	//fmt.Printf("calling om flushToBroker ok\n")
 
 	req := om.constructRequest()
 	if req == nil {
@@ -293,7 +293,7 @@ func (om *offsetManager) constructRequest() *OffsetCommitRequest {
 		for _, pom := range topicManagers {
 			pom.lock.Lock()
 			if pom.dirty {
-				fmt.Println("calling om constructRequest with partition %v and offset %v\n", pom.partition, pom.offset)
+				//fmt.Println("calling om constructRequest with partition %v and offset %v\n", pom.partition, pom.offset)
 				r.AddBlock(pom.topic, pom.partition, pom.offset, perPartitionTimestamp, pom.metadata)
 			}
 			pom.lock.Unlock()
@@ -510,7 +510,7 @@ func (pom *partitionOffsetManager) MarkOffset(offset int64, metadata string) {
 	pom.lock.Lock()
 	defer pom.lock.Unlock()
 
-	fmt.Printf("calling pom MarkOffset %v\n", offset)
+	//fmt.Printf("calling pom MarkOffset %v\n", offset)
 
 	if offset > pom.offset {
 		pom.offset = offset

@@ -39,7 +39,7 @@ type receiveInvoker struct {
 
 func (r *receiveInvoker) Invoke(ctx context.Context, m binding.Message, respFn protocol.ResponseFn) (err error) {
 	defer func() {
-		fmt.Println("calling defer from invoke")
+		//fmt.Println("calling defer from invoke")
 		err = m.Finish(err)
 	}()
 

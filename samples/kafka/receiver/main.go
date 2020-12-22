@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"log"
+	"time"
 
 	"github.com/Shopify/sarama"
 
@@ -14,8 +15,9 @@ import (
 func main() {
 	saramaConfig := sarama.NewConfig()
 	saramaConfig.Version = sarama.V2_0_0_0
+	saramaConfig.ClientID = fmt.Sprintf("consumer-%v", time.Now().Unix())
 
-	receiver, err := kafka_sarama.NewConsumer([]string{"127.0.0.1:9092"}, saramaConfig, "test-group-id", "test-topic")
+	receiver, err := kafka_sarama.NewConsumer([]string{"127.0.0.1:9092"}, saramaConfig, "test-group-id", "test")
 	if err != nil {
 		log.Fatalf("failed to create protocol: %s", err.Error())
 	}
@@ -27,7 +29,7 @@ func main() {
 		log.Fatalf("failed to create client, %v", err)
 	}
 
-	log.Printf("will listen consuming topic test-topic\n")
+	log.Printf("will listen consuming topic test\n")
 	err = c.StartReceiver(context.Background(), receive)
 	if err != nil {
 		log.Fatalf("failed to start receiver: %s", err)
@@ -37,5 +39,5 @@ func main() {
 }
 
 func receive(ctx context.Context, event cloudevents.Event) {
-	fmt.Printf("%s", event)
+	fmt.Printf("%v\n", event.ID())
 }

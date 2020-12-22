@@ -2,7 +2,6 @@ package kafka_sarama
 
 import (
 	"context"
-	"fmt"
 	"io"
 	"sync"
 
@@ -52,7 +51,7 @@ func (r *Receiver) ConsumeClaim(session sarama.ConsumerGroupSession, claim saram
 		r.incoming <- msgErr{
 			msg: binding.WithFinish(m, func(err error) {
 				if protocol.IsACK(err) {
-					fmt.Printf("marking msg %s\n", m.Value)
+					//fmt.Printf("marking msg %s\n", m.Value)
 					session.MarkMessage(tmp, "")
 				}
 			}),
